@@ -35,3 +35,22 @@ class Solution {
         return sum;
     }
 }
+
+//Excel sheet column title
+class Solution {
+    public String convertToTitle(int columnNumber) {
+        StringBuilder result = new StringBuilder();
+        while (columnNumber > 0) {
+            int remainder = columnNumber % 26;
+            if (remainder == 0) {
+                result.insert(0, 'Z');
+                columnNumber = columnNumber / 26 - 1;
+            } else {
+                result.insert(0, (char) (remainder + 64));
+                columnNumber /= 26;
+            }
+        }
+        return result.toString();
+    }
+}
+
