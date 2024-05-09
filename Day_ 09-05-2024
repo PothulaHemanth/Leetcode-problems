@@ -21,3 +21,17 @@ class Solution:
             if b in a:
                 return[nums.index(b),i]
             a[nums[i]]=nums[i]
+//score of a string
+class Solution {
+    public int scoreOfString(String s) {
+        int sum = 0;
+
+        for(int i=1;i< s.length();i++){
+            char ch1 = s.charAt(i);
+            char ch2 = s.charAt(i-1); 
+            int asciiValue = (Math.abs((int)ch1 - (int)ch2));
+            sum+=asciiValue;
+        }
+        return sum;
+    }
+}
